@@ -1,0 +1,19 @@
+services:
+  line:
+    container_name: dnr-line-bot
+    build: .
+    env_file:
+      - path: ./.env
+        required: true
+    networks:
+      - web
+    labels:
+      - traefik.enable=true
+      - traefik.http.routers.line.entrypoints=websecure
+      - traefik.http.routers.line.tls=true
+      - traefik.http.routers.line.rule=Host(`${DOMAIN}`)
+      - traefik.http.services.line.loadbalancer.server.port=5000
+
+networks:
+  web:
+    external: true

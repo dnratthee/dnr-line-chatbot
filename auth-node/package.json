@@ -1,0 +1,16 @@
+{
+  "name": "dnr-line-chatbot-auth",
+  "version": "1.0.0",
+  "main": "auth.js",
+  "scripts": {
+    "auth": "node --env-file=.env auth.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "node-jose": "^2.2.0"
+  },
+  "devDependencies": {},
+  "description": ""
+}
